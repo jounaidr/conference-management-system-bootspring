@@ -18,8 +18,6 @@ public class MainWebAppInitializer implements WebApplicationInitializer {
 
         AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
 
-//        root.register(SecSecurityConfig.class);
-
         root.scan("com.baeldung");
         sc.addListener(new ContextLoaderListener(root));
 
