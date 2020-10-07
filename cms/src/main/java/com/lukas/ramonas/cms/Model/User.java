@@ -4,6 +4,7 @@ import org.hibernate.annotations.Cascade;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
+import javax.swing.*;
 import java.util.Collection;
 import java.util.List;
 
@@ -26,9 +27,9 @@ public class User {
 
     private String email;
 
-//    @OneToMany(orphanRemoval=true,  mappedBy="User", fetch = FetchType.EAGER)
-//    @Cascade(org.hibernate.annotations.CascadeType.ALL)
-//    private List<Role> roles;
+    @OneToMany(orphanRemoval=true,  mappedBy="User", fetch = FetchType.EAGER)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    private List<Role> roles;
 
     private boolean confirmed;
 
@@ -68,13 +69,13 @@ public class User {
         this.email = email;
     }
 
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return this.roles;
-//    }
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.roles;
+    }
 
-//    public void setAuthorities(String authorities) {
-//        this.roles = authorities;
-//    }
+    public void setAuthorities(List authorities) {
+        this.roles = authorities;
+    }
 
     public Boolean getConfirmed() {
         return confirmed;
