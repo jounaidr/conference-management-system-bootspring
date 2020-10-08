@@ -32,7 +32,7 @@ public class User implements GrantedAuthority {
 //    @OneToMany(orphanRemoval=true,  mappedBy="User", fetch = FetchType.EAGER)
 //    @Cascade(org.hibernate.annotations.CascadeType.ALL)
 //    private List<Role> roles;
-
+//test
     private boolean confirmed;
 
     public Integer getId() {
