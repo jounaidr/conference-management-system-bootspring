@@ -1,6 +1,6 @@
 package com.lukas.ramonas.cms;
 
-import com.lukas.ramonas.cms.config.SecSecurityConfig;
+//import com.lukas.ramonas.cms.config.SecurityConfig.SecSecurityConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -17,8 +17,6 @@ public class MainWebAppInitializer implements WebApplicationInitializer {
     public void onStartup(final ServletContext sc) throws ServletException {
 
         AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
-
-        root.register(SecSecurityConfig.class);
 
         root.scan("com.baeldung");
         sc.addListener(new ContextLoaderListener(root));

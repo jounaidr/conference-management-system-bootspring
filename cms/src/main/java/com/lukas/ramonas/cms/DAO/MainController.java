@@ -1,7 +1,7 @@
 package com.lukas.ramonas.cms.DAO;
 
 import com.lukas.ramonas.cms.Model.User;
-import com.lukas.ramonas.cms.Repository.UserRepository;
+import com.lukas.ramonas.cms.DAO.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,7 @@ public class MainController {
             @RequestParam String username,
             @RequestParam String password,
             @RequestParam String email,
-            @RequestParam String role,
+            @RequestParam String authorities,
             @RequestParam Boolean confirmed) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
@@ -32,16 +32,15 @@ public class MainController {
         n.setUsername(username);
         n.setPassword(password);
         n.setEmail(email);
-        n.setRole(role);
+//        n.setAuthorities(authorities);
         n.setConfirmed(confirmed);
         UserRepository.save(n);
         return "Saved";
     }
 
-
 //    @GetMapping(path="/all")
 //    public @ResponseBody Iterable<User> getAllUsers() {
 //        // This returns a JSON or XML with the users
-//      //  return user_tableRepository.findAll();
+//      //  return UserRepository.findAll();
 //    }
 }
