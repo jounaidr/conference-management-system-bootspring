@@ -3,9 +3,16 @@
 *******************************************************/
 
 --database
-CREATE DATABASE cms_database
+-- CREATE DATABASE cms_database
+--
+-- GO
 
-GO
+--Table:role_table
+CREATE TABLE role_table(
+role_id SERIAL NOT NULL,
+name VARCHAR(32),
+PRIMARY KEY (role_id)
+);
 
 --Table:role_table
 CREATE TABLE role_table(
